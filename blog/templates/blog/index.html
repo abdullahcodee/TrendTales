@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block page_title%} <title>My Blogs </title>{%endblock%}
+{%block css_files%}
+    <link rel="stylesheet" href= "{%static "blog/post.css" %}">
+    <link rel="stylesheet" href= "{% static "blog/index.css" %}">
+{%endblock%}
+
+{%block page_content%}
+<main>
+    <h1> <a href = "{% url "starting_page" %}"> Abdullah's Blogs</a></h1>
+    <section id="welcome">
+        <img src= "{%static "blog/images/me.png"%}"alt= "Abdullah - the Author of this blog "/>
+        <h2>ABDULLAH'S BLOGS</h2>
+        <p>Hi I'm Abdullah and I love to blog about tech and the world!.</p>
+    </section>
+    <section id="latest-posts">
+        <h2>My Latest Thoughts </h2>
+        <ul>
+            {%for post in posts%}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="about">
+        <h2>About</h2>
+        <p>I like programming and learning new technologies. and I always have the eger to learn new things.</p>
+        <p>My goal is to do something really useful to the humanity using my knowledge and working with big teams to share our thoughts and experience .</p>
+
+    </section>
+</main>
+
+{%endblock%}
+
+

@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block page_title%}
+    All Stored Posts
+{%endblock%}
+
+{%block css_files%} 
+    <link rel="stylesheet" href= "{%static "blog/stored_posts.css" %}">
+{%endblock%}
+
+{%block page_content%}
+
+    {%if has_stored is False %}
+        <p> You Don't Have Any Stored Posts To Show</p>
+    {% else %}
+        <ul>
+            {%for post in posts %}
+            <li><a href = "{%url "post_detail_page" post.slug %}">{{post.title}}</a></li>
+            {%endfor%}
+        </ul>
+    {%endif%}
+{%endblock%}

@@ -1,0 +1,15 @@
+
+<li>
+    <article class= "post">
+        <a href= "{% url "book-details" slug %}" >
+            <img src= "{{image}}" alt = "{{title}}"/>
+            <div class= "post__content">
+                <h3>{{title}} </h3>
+                <h3>{{edition}} </h3>
+                <h3>{{updated}} </h3>
+                <h3>{{categoty}} </h3>
+                <p>{{description}} </p>
+            </div>
+        </a>
+    </article>
+</li>
